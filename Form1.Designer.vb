@@ -51,7 +51,14 @@ Partial Class Form1
         TextBoxSearchItemName = New TextBox()
         ButtonSearchItem = New Button()
         TabPage3 = New TabPage()
+        ToolStripContainer3 = New ToolStripContainer()
+        DataGridViewResultDigi = New DataGridView()
+        SplitContainer4 = New SplitContainer()
         Label8 = New Label()
+        SplitContainer5 = New SplitContainer()
+        TextBoxSearchDigi = New TextBox()
+        ButtonSearchDigi = New Button()
+        ToolStripContainer4 = New ToolStripContainer()
         TabControl1.SuspendLayout()
         TabPage1.SuspendLayout()
         CType(SplitContainer1, ComponentModel.ISupportInitialize).BeginInit()
@@ -72,6 +79,18 @@ Partial Class Form1
         SplitContainer3.Panel2.SuspendLayout()
         SplitContainer3.SuspendLayout()
         TabPage3.SuspendLayout()
+        ToolStripContainer3.ContentPanel.SuspendLayout()
+        ToolStripContainer3.SuspendLayout()
+        CType(DataGridViewResultDigi, ComponentModel.ISupportInitialize).BeginInit()
+        CType(SplitContainer4, ComponentModel.ISupportInitialize).BeginInit()
+        SplitContainer4.Panel1.SuspendLayout()
+        SplitContainer4.Panel2.SuspendLayout()
+        SplitContainer4.SuspendLayout()
+        CType(SplitContainer5, ComponentModel.ISupportInitialize).BeginInit()
+        SplitContainer5.Panel1.SuspendLayout()
+        SplitContainer5.Panel2.SuspendLayout()
+        SplitContainer5.SuspendLayout()
+        ToolStripContainer4.SuspendLayout()
         SuspendLayout()
         ' 
         ' TabControl1
@@ -281,7 +300,7 @@ Partial Class Form1
         ' 
         ToolStripContainer1.ContentPanel.Controls.Add(ToolStripContainer2)
         ToolStripContainer1.ContentPanel.Controls.Add(SplitContainer2)
-        ToolStripContainer1.ContentPanel.Size = New Size(653, 498)
+        ToolStripContainer1.ContentPanel.Size = New Size(653, 523)
         ToolStripContainer1.Dock = DockStyle.Fill
         ToolStripContainer1.Location = New Point(3, 3)
         ToolStripContainer1.Name = "ToolStripContainer1"
@@ -289,20 +308,17 @@ Partial Class Form1
         ToolStripContainer1.TabIndex = 0
         ToolStripContainer1.Text = "ToolStripContainer1"
         ' 
-        ' ToolStripContainer1.TopToolStripPanel
-        ' 
-        ' 
         ' ToolStripContainer2
         ' 
         ' 
         ' ToolStripContainer2.ContentPanel
         ' 
         ToolStripContainer2.ContentPanel.Controls.Add(DataGridViewResults)
-        ToolStripContainer2.ContentPanel.Size = New Size(653, 447)
+        ToolStripContainer2.ContentPanel.Size = New Size(653, 497)
         ToolStripContainer2.Dock = DockStyle.Fill
         ToolStripContainer2.Location = New Point(0, 26)
         ToolStripContainer2.Name = "ToolStripContainer2"
-        ToolStripContainer2.Size = New Size(653, 472)
+        ToolStripContainer2.Size = New Size(653, 497)
         ToolStripContainer2.TabIndex = 4
         ToolStripContainer2.Text = "ToolStripContainer2"
         ' 
@@ -312,7 +328,7 @@ Partial Class Form1
         DataGridViewResults.Dock = DockStyle.Fill
         DataGridViewResults.Location = New Point(0, 0)
         DataGridViewResults.Name = "DataGridViewResults"
-        DataGridViewResults.Size = New Size(653, 447)
+        DataGridViewResults.Size = New Size(653, 497)
         DataGridViewResults.TabIndex = 3
         ' 
         ' SplitContainer2
@@ -382,7 +398,7 @@ Partial Class Form1
         ' 
         ' TabPage3
         ' 
-        TabPage3.Controls.Add(Label8)
+        TabPage3.Controls.Add(ToolStripContainer3)
         TabPage3.Location = New Point(4, 27)
         TabPage3.Name = "TabPage3"
         TabPage3.Padding = New Padding(3)
@@ -391,15 +407,107 @@ Partial Class Form1
         TabPage3.Text = "TabPage3"
         TabPage3.UseVisualStyleBackColor = True
         ' 
+        ' ToolStripContainer3
+        ' 
+        ' 
+        ' ToolStripContainer3.ContentPanel
+        ' 
+        ToolStripContainer3.ContentPanel.Controls.Add(DataGridViewResultDigi)
+        ToolStripContainer3.ContentPanel.Controls.Add(SplitContainer4)
+        ToolStripContainer3.ContentPanel.Size = New Size(653, 498)
+        ToolStripContainer3.Dock = DockStyle.Fill
+        ToolStripContainer3.Location = New Point(3, 3)
+        ToolStripContainer3.Name = "ToolStripContainer3"
+        ToolStripContainer3.Size = New Size(653, 523)
+        ToolStripContainer3.TabIndex = 0
+        ToolStripContainer3.Text = "ToolStripContainer3"
+        ' 
+        ' DataGridViewResultDigi
+        ' 
+        DataGridViewResultDigi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewResultDigi.Dock = DockStyle.Fill
+        DataGridViewResultDigi.Location = New Point(0, 26)
+        DataGridViewResultDigi.Name = "DataGridViewResultDigi"
+        DataGridViewResultDigi.Size = New Size(653, 472)
+        DataGridViewResultDigi.TabIndex = 4
+        ' 
+        ' SplitContainer4
+        ' 
+        SplitContainer4.Dock = DockStyle.Top
+        SplitContainer4.FixedPanel = FixedPanel.Panel1
+        SplitContainer4.ImeMode = ImeMode.NoControl
+        SplitContainer4.Location = New Point(0, 0)
+        SplitContainer4.Name = "SplitContainer4"
+        ' 
+        ' SplitContainer4.Panel1
+        ' 
+        SplitContainer4.Panel1.Controls.Add(Label8)
+        ' 
+        ' SplitContainer4.Panel2
+        ' 
+        SplitContainer4.Panel2.Controls.Add(SplitContainer5)
+        SplitContainer4.Size = New Size(653, 26)
+        SplitContainer4.SplitterDistance = 70
+        SplitContainer4.TabIndex = 3
+        ' 
         ' Label8
         ' 
         Label8.AutoSize = True
-        Label8.Font = New Font("Showcard Gothic", 36F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
-        Label8.Location = New Point(109, 118)
+        Label8.Dock = DockStyle.Fill
+        Label8.Font = New Font("Yu Gothic UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label8.Location = New Point(0, 0)
         Label8.Name = "Label8"
-        Label8.Size = New Size(396, 60)
-        Label8.TabIndex = 0
-        Label8.Text = "Comming Soon"
+        Label8.Size = New Size(63, 21)
+        Label8.TabIndex = 144
+        Label8.Text = "Search:"
+        ' 
+        ' SplitContainer5
+        ' 
+        SplitContainer5.Dock = DockStyle.Fill
+        SplitContainer5.Location = New Point(0, 0)
+        SplitContainer5.Name = "SplitContainer5"
+        ' 
+        ' SplitContainer5.Panel1
+        ' 
+        SplitContainer5.Panel1.Controls.Add(TextBoxSearchDigi)
+        ' 
+        ' SplitContainer5.Panel2
+        ' 
+        SplitContainer5.Panel2.Controls.Add(ButtonSearchDigi)
+        SplitContainer5.Size = New Size(579, 26)
+        SplitContainer5.SplitterDistance = 470
+        SplitContainer5.TabIndex = 5
+        ' 
+        ' TextBoxSearchDigi
+        ' 
+        TextBoxSearchDigi.Dock = DockStyle.Fill
+        TextBoxSearchDigi.Location = New Point(0, 0)
+        TextBoxSearchDigi.Name = "TextBoxSearchDigi"
+        TextBoxSearchDigi.Size = New Size(470, 23)
+        TextBoxSearchDigi.TabIndex = 0
+        ' 
+        ' ButtonSearchDigi
+        ' 
+        ButtonSearchDigi.Dock = DockStyle.Fill
+        ButtonSearchDigi.Location = New Point(0, 0)
+        ButtonSearchDigi.Name = "ButtonSearchDigi"
+        ButtonSearchDigi.Size = New Size(105, 26)
+        ButtonSearchDigi.TabIndex = 1
+        ButtonSearchDigi.Text = "Search"
+        ButtonSearchDigi.UseVisualStyleBackColor = True
+        ' 
+        ' ToolStripContainer4
+        ' 
+        ' 
+        ' ToolStripContainer4.ContentPanel
+        ' 
+        ToolStripContainer4.ContentPanel.Size = New Size(667, 535)
+        ToolStripContainer4.Dock = DockStyle.Fill
+        ToolStripContainer4.Location = New Point(0, 0)
+        ToolStripContainer4.Name = "ToolStripContainer4"
+        ToolStripContainer4.Size = New Size(667, 560)
+        ToolStripContainer4.TabIndex = 0
+        ToolStripContainer4.Text = "ToolStripContainer4"
         ' 
         ' Form1
         ' 
@@ -409,6 +517,7 @@ Partial Class Form1
         BackgroundImageLayout = ImageLayout.Center
         ClientSize = New Size(667, 560)
         Controls.Add(TabControl1)
+        Controls.Add(ToolStripContainer4)
         Icon = CType(resources.GetObject("$this.Icon"), Icon)
         MinimumSize = New Size(476, 476)
         Name = "Form1"
@@ -439,7 +548,22 @@ Partial Class Form1
         CType(SplitContainer3, ComponentModel.ISupportInitialize).EndInit()
         SplitContainer3.ResumeLayout(False)
         TabPage3.ResumeLayout(False)
-        TabPage3.PerformLayout()
+        ToolStripContainer3.ContentPanel.ResumeLayout(False)
+        ToolStripContainer3.ResumeLayout(False)
+        ToolStripContainer3.PerformLayout()
+        CType(DataGridViewResultDigi, ComponentModel.ISupportInitialize).EndInit()
+        SplitContainer4.Panel1.ResumeLayout(False)
+        SplitContainer4.Panel1.PerformLayout()
+        SplitContainer4.Panel2.ResumeLayout(False)
+        CType(SplitContainer4, ComponentModel.ISupportInitialize).EndInit()
+        SplitContainer4.ResumeLayout(False)
+        SplitContainer5.Panel1.ResumeLayout(False)
+        SplitContainer5.Panel1.PerformLayout()
+        SplitContainer5.Panel2.ResumeLayout(False)
+        CType(SplitContainer5, ComponentModel.ISupportInitialize).EndInit()
+        SplitContainer5.ResumeLayout(False)
+        ToolStripContainer4.ResumeLayout(False)
+        ToolStripContainer4.PerformLayout()
         ResumeLayout(False)
     End Sub
 
@@ -471,5 +595,12 @@ Partial Class Form1
     Friend WithEvents LinkLabel1 As LinkLabel
     Friend WithEvents Label7 As Label
     Friend WithEvents TabPage3 As TabPage
+    Friend WithEvents ToolStripContainer3 As ToolStripContainer
+    Friend WithEvents DataGridViewResultDigi As DataGridView
+    Friend WithEvents SplitContainer4 As SplitContainer
     Friend WithEvents Label8 As Label
+    Friend WithEvents SplitContainer5 As SplitContainer
+    Friend WithEvents TextBoxSearchDigi As TextBox
+    Friend WithEvents ButtonSearchDigi As Button
+    Friend WithEvents ToolStripContainer4 As ToolStripContainer
 End Class
