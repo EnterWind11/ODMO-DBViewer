@@ -98,48 +98,66 @@ Public Class Form1
         Dim dt As New DataTable()
 
         If Connection Is Nothing OrElse Connection.State <> ConnectionState.Open Then
-            MessageBox.Show("no connection to the Database.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("No connection to the Database.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return dt
         End If
 
         Try
-            Dim query As String = "SELECT ItemId, Name FROM [DMOX].[Asset].[ItemInfo] WHERE [Name] LIKE @name"
+            Dim dbName As String = TextBoxDB.Text.Trim()
+            If String.IsNullOrEmpty(dbName) Then
+                MessageBox.Show("Database name is not specified.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return dt
+            End If
+
+            Dim query As String = $"SELECT ItemId, Name FROM [{dbName}].[Asset].[ItemInfo] WHERE [Name] LIKE @name"
+
             Using cmd As New SqlCommand(query, Connection)
                 cmd.Parameters.AddWithValue("@name", "%" & itemName & "%")
                 Using adapter As New SqlDataAdapter(cmd)
                     adapter.Fill(dt)
                 End Using
             End Using
+
         Catch ex As Exception
-            MessageBox.Show("search error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Search error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
         Return dt
     End Function
+
 
     ' Searches for Digimon by name in the database
     Private Function SearchDigimonByName(DigiName As String) As DataTable
         Dim dt As New DataTable()
 
         If Connection Is Nothing OrElse Connection.State <> ConnectionState.Open Then
-            MessageBox.Show("no connection to the Database.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("No connection to the Database.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return dt
         End If
 
         Try
-            Dim query As String = "SELECT Type, Model, Name FROM [DMOX].[Asset].[DigimonBaseInfo] WHERE [Name] LIKE @name"
+            Dim dbName As String = TextBoxDB.Text.Trim()
+            If String.IsNullOrEmpty(dbName) Then
+                MessageBox.Show("Database name is not specified.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return dt
+            End If
+
+            Dim query As String = $"SELECT Type, Model, Name FROM [{dbName}].[Asset].[DigimonBaseInfo] WHERE [Name] LIKE @name"
+
             Using cmd As New SqlCommand(query, Connection)
                 cmd.Parameters.AddWithValue("@name", "%" & DigiName & "%")
                 Using adapter As New SqlDataAdapter(cmd)
                     adapter.Fill(dt)
                 End Using
             End Using
+
         Catch ex As Exception
-            MessageBox.Show("search error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Search error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
         Return dt
     End Function
+
 
     ' Handles the search button click for items
     Private Sub ButtonSearchItem_Click(sender As Object, e As EventArgs) Handles ButtonSearchItem.Click
